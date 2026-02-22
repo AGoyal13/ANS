@@ -13,7 +13,7 @@ export interface Client {
   name: string;
   shortName?: string;
   sector: ClientSector;
-  logoPlaceholder?: string;
+  logoSrc?: string;
   associatedSince?: number;
   totalContractsCrore?: number;
 }

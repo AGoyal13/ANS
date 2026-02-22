@@ -17,4 +17,5 @@ export interface Project {
   location?: string;
   status: 'completed' | 'in-progress';
   description?: string;
+  imageSrc?: string;
 }
