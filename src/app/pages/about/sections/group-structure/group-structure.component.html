@@ -1,0 +1,23 @@
+<section class="group-structure">
+  <ans-section-header
+    title="The ANS Group"
+    subtitle="A diversified group with specialised entities covering every aspect of infrastructure development."
+  />
+
+  <div class="group-structure__grid">
+    @for (entity of entities; track entity.name) {
+      <div class="group-structure__card" [class.group-structure__card--flagship]="$index === 0">
+        @if ($index === 0) {
+          <span class="group-structure__flagship-badge">Flagship</span>
+        }
+        <h3 class="group-structure__card-name">{{ entity.name }}</h3>
+        <p class="group-structure__card-desc">{{ entity.description }}</p>
+        <ul class="group-structure__card-highlights">
+          @for (item of entity.highlights; track item) {
+            <li>{{ item }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>

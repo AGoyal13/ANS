@@ -1,0 +1,71 @@
+<footer class="footer">
+  <div class="footer__main">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        @if (!logoError) {
+          <img
+            class="footer__logo-img"
+            src="/images/logo/ans-logo-white.svg"
+            alt="ANS Constructions Pvt. Ltd."
+            (error)="logoError = true"
+          />
+        } @else {
+          <span class="footer__logo-mark">ANS</span>
+          <span class="footer__logo-text">Constructions Pvt. Ltd.</span>
+        }
+      </div>
+      <p class="footer__tagline">Raising Finer Future Together</p>
+      <p class="footer__desc">
+        A leading construction company founded in 1966, delivering mega-projects across highways,
+        refineries, irrigation, and institutional infrastructure throughout India.
+      </p>
+      <div class="footer__certs">
+        <span class="footer__cert-badge">ISO 9001</span>
+        <span class="footer__cert-badge">OHSAS 18001</span>
+      </div>
+    </div>
+
+    <div class="footer__links">
+      <h4 class="footer__heading">Quick Links</h4>
+      <ul class="footer__link-list">
+        @for (link of quickLinks; track link.path) {
+          <li>
+            <a class="footer__link" [routerLink]="link.path">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="footer__contact">
+      <h4 class="footer__heading">Contact Us</h4>
+      <address class="footer__address">
+        <p>ANS House, E-2, Block B-1 Extension,</p>
+        <p>Mohan Co-operative Industrial Estate,</p>
+        <p>Mathura Road, New Delhi — 110044</p>
+      </address>
+      <ul class="footer__contact-list">
+        <li>
+          <span class="footer__contact-label">Phone</span>
+          <a class="footer__link" href="tel:+911145450909">011-45450909</a>
+        </li>
+        <li>
+          <span class="footer__contact-label">Fax</span>
+          <span>011-45450990</span>
+        </li>
+        <li>
+          <span class="footer__contact-label">Email</span>
+          <a class="footer__link" href="mailto:info@ansconstructions.com">
+            info&#64;ansconstructions.com
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__copy">
+      &copy; {{ currentYear }} ANS Constructions Pvt. Ltd. All rights reserved.
+    </p>
+    <p class="footer__sub">We Remain At Your Service</p>
+  </div>
+</footer>

@@ -1,0 +1,11 @@
+<section class="page-banner">
+  <div class="page-banner__inner">
+    @if (breadcrumb()) {
+      <span class="page-banner__breadcrumb">Home / {{ breadcrumb() }}</span>
+    }
+    <h1 class="page-banner__title">{{ title() }}</h1>
+    @if (subtitle()) {
+      <p class="page-banner__subtitle">{{ subtitle() }}</p>
+    }
+  </div>
+</section>

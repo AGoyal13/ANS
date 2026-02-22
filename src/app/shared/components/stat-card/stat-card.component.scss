@@ -1,0 +1,30 @@
+@use '../../../../styles/variables' as *;
+
+.stat-card {
+  text-align: center;
+  padding: $spacing-lg;
+
+  &__value {
+    font-family: $font-heading;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: $color-primary;
+    line-height: 1;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__prefix,
+  &__suffix {
+    font-size: 0.6em;
+    font-weight: 700;
+    vertical-align: super;
+  }
+
+  &__label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $color-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}

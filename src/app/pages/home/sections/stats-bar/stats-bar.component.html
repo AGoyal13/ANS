@@ -1,0 +1,12 @@
+<section class="stats-bar">
+  <div class="stats-bar__inner">
+    @for (stat of stats; track stat.label) {
+      <ans-stat-card
+        [value]="stat.value"
+        [label]="stat.label"
+        [prefix]="stat.prefix ?? ''"
+        [suffix]="stat.suffix ?? ''"
+      />
+    }
+  </div>
+</section>

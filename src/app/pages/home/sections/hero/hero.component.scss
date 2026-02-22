@@ -1,0 +1,203 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.hero {
+  @include full-bleed;
+  background: $color-secondary;
+  min-height: calc(100vh - $header-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  // Background photo (shown when image loads successfully)
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity $transition-slow;
+    pointer-events: none;
+
+    &--loaded {
+      opacity: 0.18;
+    }
+  }
+
+  // Subtle geometric background pattern
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 80% 20%, rgba($color-primary, 0.12) 0%, transparent 50%),
+      radial-gradient(circle at 10% 80%, rgba($color-primary, 0.06) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  &__inner {
+    @include container;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: $spacing-xl;
+    align-items: center;
+    padding-block: $spacing-2xl;
+
+    @include respond-to('lg') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    max-width: 640px;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $color-primary;
+    margin-bottom: $spacing-md;
+    padding: 0.375rem 1rem;
+    border: 1px solid rgba($color-primary, 0.4);
+    border-radius: $radius-full;
+  }
+
+  &__title {
+    color: $color-text-on-secondary;
+    line-height: 1.1;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__title-accent {
+    color: $color-primary;
+  }
+
+  &__desc {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 1.1rem;
+    line-height: 1.75;
+    margin-bottom: $spacing-xl;
+    max-width: 560px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: $radius-sm;
+    border: 2px solid $color-primary;
+    transition: background $transition-fast, color $transition-fast;
+
+    &--primary {
+      background: $color-primary;
+      color: $color-text-on-primary;
+
+      &:hover {
+        background: $color-primary-dark;
+        border-color: $color-primary-dark;
+      }
+    }
+
+    &--outline {
+      background: transparent;
+      color: $color-text-on-secondary;
+      border-color: rgba(255, 255, 255, 0.4);
+
+      &:hover {
+        border-color: $color-primary;
+        color: $color-primary;
+      }
+    }
+  }
+
+  // --- Stats badges (right column) ---
+  &__badges {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-sm;
+    flex-shrink: 0;
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__badge {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    min-width: 130px;
+
+    @include respond-to('lg') {
+      min-width: unset;
+    }
+  }
+
+  &__badge-value {
+    display: block;
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: $color-primary;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+
+  &__badge-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  // --- Scroll hint ---
+  &__scroll-hint {
+    position: absolute;
+    bottom: $spacing-lg;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include respond-to('md') {
+      display: none;
+    }
+  }
+
+  &__scroll-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: $radius-full;
+    background: rgba(255, 255, 255, 0.4);
+    animation: scrollPulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(6px); }
+  }
+}

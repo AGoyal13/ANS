@@ -1,0 +1,53 @@
+<header class="header" [class.header--scrolled]="scrolled()">
+  <div class="header__inner">
+    <a class="header__logo" routerLink="/" (click)="closeMenu()">
+      @if (!logoError()) {
+        <img
+          class="header__logo-img"
+          src="/images/logo/ans-logo.svg"
+          alt="ANS Constructions Pvt. Ltd."
+          (error)="logoError.set(true)"
+        />
+      } @else {
+        <span class="header__logo-mark">ANS</span>
+        <span class="header__logo-text">Constructions Pvt Ltd</span>
+      }
+    </a>
+
+    <nav class="header__nav" [class.header__nav--open]="menuOpen()" aria-label="Main navigation">
+      <ul class="header__nav-list">
+        @for (item of navItems; track item.path) {
+          <li class="header__nav-item">
+            <a
+              class="header__nav-link"
+              [routerLink]="item.path"
+              routerLinkActive="header__nav-link--active"
+              [routerLinkActiveOptions]="{ exact: item.path === '/' }"
+              (click)="closeMenu()"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <a class="header__cta" routerLink="/contact" (click)="closeMenu()">Get in Touch</a>
+
+    <button
+      class="header__hamburger"
+      [class.header__hamburger--open]="menuOpen()"
+      (click)="toggleMenu()"
+      aria-label="Toggle navigation menu"
+      [attr.aria-expanded]="menuOpen()"
+    >
+      <span class="header__hamburger-bar"></span>
+      <span class="header__hamburger-bar"></span>
+      <span class="header__hamburger-bar"></span>
+    </button>
+  </div>
+
+  @if (menuOpen()) {
+    <div class="header__overlay" (click)="closeMenu()" aria-hidden="true"></div>
+  }
+</header>

@@ -1,0 +1,52 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.certifications {
+  @include section-padding;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('sm') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include card;
+    padding: $spacing-lg;
+    text-align: center;
+    border-top: 3px solid $color-primary;
+  }
+
+  &__badge {
+    display: inline-block;
+    font-family: $font-heading;
+    font-size: 1rem;
+    font-weight: 800;
+    color: $color-secondary;
+    border: 2px solid $color-secondary;
+    border-radius: $radius-sm;
+    padding: 0.375rem 1rem;
+    margin-bottom: $spacing-md;
+    letter-spacing: 0.04em;
+  }
+
+  &__card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $color-text;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__card-desc {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+}

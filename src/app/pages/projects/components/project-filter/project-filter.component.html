@@ -1,0 +1,13 @@
+<div class="project-filter" role="tablist" aria-label="Filter projects by category">
+  @for (filter of filters; track filter.value) {
+    <button
+      class="project-filter__btn"
+      [class.project-filter__btn--active]="activeFilter() === filter.value"
+      (click)="setFilter(filter.value)"
+      role="tab"
+      [attr.aria-selected]="activeFilter() === filter.value"
+    >
+      {{ filter.label }}
+    </button>
+  }
+</div>

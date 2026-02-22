@@ -1,0 +1,32 @@
+@use '../../../../styles/variables' as *;
+
+.section-header {
+  margin-bottom: $spacing-xl;
+
+  &--center {
+    text-align: center;
+
+    .section-header__accent {
+      margin-inline: auto;
+    }
+  }
+
+  &__title {
+    margin-bottom: $spacing-xs;
+  }
+
+  &__accent {
+    display: block;
+    width: 56px;
+    height: 4px;
+    background: $color-primary;
+    border-radius: $radius-full;
+    margin-bottom: $spacing-md;
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    max-width: 680px;
+    line-height: 1.7;
+  }
+}

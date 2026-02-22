@@ -1,0 +1,44 @@
+// =============================================================================
+// ANS Constructions — Typography
+// =============================================================================
+@use 'variables' as *;
+
+body {
+  font-family: $font-primary;
+  font-size: 1rem;
+  color: $color-text;
+  background-color: $color-bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $color-text;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+p {
+  color: $color-text-muted;
+  line-height: 1.75;
+}
+
+strong {
+  color: $color-text;
+  font-weight: 600;
+}
+
+small {
+  font-size: 0.875rem;
+}

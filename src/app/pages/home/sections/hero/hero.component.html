@@ -1,0 +1,51 @@
+<section class="hero">
+  <img
+    class="hero__bg"
+    src="/images/hero/hero-bg.jpg"
+    alt=""
+    aria-hidden="true"
+    [class.hero__bg--loaded]="!bgError()"
+    (error)="bgError.set(true)"
+  />
+  <div class="hero__inner">
+    <div class="hero__content">
+      <span class="hero__eyebrow">Est. 1966 &nbsp;·&nbsp; New Delhi, India</span>
+      <h1 class="hero__title">
+        Raising Finer <br />
+        <span class="hero__title-accent">Future Together</span>
+      </h1>
+      <p class="hero__desc">
+        ANS Constructions Pvt. Ltd. is a leading construction company delivering mega-projects
+        across highways, refineries, fertilizer plants, irrigation systems, stadiums and
+        institutional buildings throughout India.
+      </p>
+      <div class="hero__actions">
+        <a class="hero__btn hero__btn--primary" routerLink="/projects">Explore Projects</a>
+        <a class="hero__btn hero__btn--outline" routerLink="/contact">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero__badges">
+      <div class="hero__badge">
+        <span class="hero__badge-value">58+</span>
+        <span class="hero__badge-label">Years of Excellence</span>
+      </div>
+      <div class="hero__badge">
+        <span class="hero__badge-value">&#8377;1,700+ Cr</span>
+        <span class="hero__badge-label">Projects Delivered</span>
+      </div>
+      <div class="hero__badge">
+        <span class="hero__badge-value">30+</span>
+        <span class="hero__badge-label">Major Clients</span>
+      </div>
+      <div class="hero__badge">
+        <span class="hero__badge-value">25+</span>
+        <span class="hero__badge-label">Concurrent Projects</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll-hint" aria-hidden="true">
+    <span class="hero__scroll-dot"></span>
+  </div>
+</section>

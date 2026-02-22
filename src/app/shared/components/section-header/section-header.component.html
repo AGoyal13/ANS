@@ -1,0 +1,7 @@
+<div class="section-header" [class.section-header--center]="align() === 'center'">
+  <h2 class="section-header__title">{{ title() }}</h2>
+  <span class="section-header__accent"></span>
+  @if (subtitle()) {
+    <p class="section-header__subtitle">{{ subtitle() }}</p>
+  }
+</div>

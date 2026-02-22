@@ -1,0 +1,29 @@
+<ans-page-banner
+  title="Our Services"
+  subtitle="From national highways to process plants — comprehensive civil construction across nine specialised domains."
+  breadcrumb="Services"
+/>
+
+<section class="services-page">
+  <ans-section-header
+    title="What We Build"
+    subtitle="ANS Constructions Pvt Ltd delivers end-to-end civil and structural construction services for India's most demanding projects."
+  />
+
+  <div class="services-page__grid">
+    @for (service of services; track service.id) {
+      <div class="services-page__card">
+        <div class="services-page__card-header">
+          <span class="services-page__card-index">{{ ('0' + ($index + 1)).slice(-2) }}</span>
+          <h2 class="services-page__card-title">{{ service.title }}</h2>
+        </div>
+        <p class="services-page__card-desc">{{ service.description }}</p>
+        <ul class="services-page__highlights">
+          @for (highlight of service.highlights; track highlight) {
+            <li class="services-page__highlight">{{ highlight }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</section>

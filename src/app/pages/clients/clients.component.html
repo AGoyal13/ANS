@@ -1,0 +1,69 @@
+<ans-page-banner
+  title="Our Clients"
+  subtitle="Trusted by India's leading public sector enterprises, multinational EPC contractors, and government agencies for over five decades."
+  breadcrumb="Clients"
+/>
+
+<section class="clients-page">
+  @if (longTermClients.length > 0) {
+    <div class="clients-page__longterm-section">
+      <ans-section-header
+        title="Long-Standing Partnerships"
+        subtitle="Repeat business spanning decades — our greatest testimony to quality and trust."
+      />
+      <div class="clients-page__longterm-grid">
+        @for (client of longTermClients; track client.id) {
+          <div class="clients-page__longterm-card">
+            <div class="clients-page__longterm-logo">
+              @if (!hasLogoError(client.id)) {
+                <img
+                  [src]="logoSrc(client.id)"
+                  [alt]="client.shortName ?? client.name"
+                  class="clients-page__logo-img"
+                  (error)="onLogoError(client.id)"
+                />
+              } @else {
+                <span aria-hidden="true">{{ (client.shortName ?? client.name).substring(0, 3).toUpperCase() }}</span>
+              }
+            </div>
+            <h3 class="clients-page__longterm-name">{{ client.shortName ?? client.name }}</h3>
+            <p class="clients-page__longterm-meta">
+              Since {{ client.associatedSince }}
+            </p>
+            <p class="clients-page__longterm-value">
+              &#8377;{{ client.totalContractsCrore }} Cr+ contracted
+            </p>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  <div class="clients-page__sectors">
+    <ans-section-header title="All Clients by Sector" />
+    @for (group of sectorGroups; track group.sector) {
+      <div class="clients-page__sector">
+        <h3 class="clients-page__sector-title">{{ group.label }}</h3>
+        <div class="clients-page__sector-grid">
+          @for (client of group.clients; track client.id) {
+            <div class="clients-page__client-chip">
+              <span class="clients-page__client-abbr">
+                @if (!hasLogoError(client.id)) {
+                  <img
+                    [src]="logoSrc(client.id)"
+                    [alt]="client.shortName ?? client.name"
+                    class="clients-page__logo-img--small"
+                    (error)="onLogoError(client.id)"
+                  />
+                } @else {
+                  <span aria-hidden="true">{{ (client.shortName ?? client.name).substring(0, 2).toUpperCase() }}</span>
+                }
+              </span>
+              <span class="clients-page__client-name">{{ client.shortName ?? client.name }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</section>

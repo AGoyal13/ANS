@@ -1,0 +1,33 @@
+<section class="clients-strip">
+  <ans-section-header
+    title="Our Esteemed Clients"
+    subtitle="Trusted by India's largest public sector, industrial, and infrastructure organisations since 1966."
+    align="center"
+  />
+
+  <div class="clients-strip__marquee-wrap" aria-label="Client list">
+    <div class="clients-strip__marquee">
+      @for (client of clients; track client.id) {
+        <span class="clients-strip__client-name">{{ client.shortName ?? client.name }}</span>
+      }
+      @for (client of clients; track 'dup-' + client.id) {
+        <span class="clients-strip__client-name" aria-hidden="true">{{ client.shortName ?? client.name }}</span>
+      }
+    </div>
+  </div>
+
+  <div class="clients-strip__featured">
+    @for (client of featuredClients; track client.id) {
+      <div class="clients-strip__featured-card">
+        <span class="clients-strip__featured-name">{{ client.shortName ?? client.name }}</span>
+        <span class="clients-strip__featured-meta">
+          Since {{ client.associatedSince }} &nbsp;·&nbsp; &#8377;{{ client.totalContractsCrore }} Cr+
+        </span>
+      </div>
+    }
+  </div>
+
+  <div class="clients-strip__footer">
+    <a class="clients-strip__cta" routerLink="/clients">View All Clients</a>
+  </div>
+</section>

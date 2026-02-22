@@ -1,0 +1,134 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.clients-strip {
+  @include full-bleed;
+  @include section-padding;
+  background: $color-surface;
+  border-top: 1px solid $color-border;
+
+  ans-section-header {
+    padding-inline: var(--page-margin);
+
+    @include respond-to('xl') {
+      padding-inline: 0;
+    }
+  }
+
+  // --- Marquee ---
+  &__marquee-wrap {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: $spacing-xl;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 1;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, $color-surface, transparent);
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, $color-surface, transparent);
+    }
+  }
+
+  &__marquee {
+    display: flex;
+    gap: $spacing-xl;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &__client-name {
+    font-family: $font-heading;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $color-text-muted;
+    white-space: nowrap;
+    padding: 0.5rem 1.25rem;
+    border: 1px solid $color-border;
+    border-radius: $radius-full;
+    background: $color-bg;
+    transition: color $transition-fast, border-color $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  // --- Featured clients ---
+  &__featured {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xl;
+
+    @include respond-to('xl') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('sm') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__featured-card {
+    background: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    transition: border-color $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      border-color: $color-primary;
+      box-shadow: $shadow-sm;
+    }
+  }
+
+  &__featured-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: $color-text;
+  }
+
+  &__featured-meta {
+    font-size: 0.8rem;
+    color: $color-primary;
+    font-weight: 500;
+  }
+
+  &__footer {
+    text-align: center;
+  }
+
+  &__cta {
+    @include btn-outline;
+  }
+}

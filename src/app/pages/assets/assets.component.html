@@ -1,0 +1,27 @@
+<ans-page-banner
+  title="Assets & Equipment"
+  subtitle="A modern, well-maintained fleet of heavy machinery enabling concurrent mega-project execution across India."
+  breadcrumb="Assets"
+/>
+
+<section class="assets-page">
+  <div class="assets-page__overview">
+    <p class="assets-page__overview-text">
+      ANS Constructions Pvt Ltd maintains an extensive fleet of owned machinery and equipment — enabling
+      self-sufficient, timely execution without dependence on external plant hire.
+      Our fleet spans <strong>{{ categoryGroups.length }} categories</strong> with a total inventory
+      exceeding <strong>{{ totalItems }}+ units</strong>.
+    </p>
+  </div>
+
+  @for (group of categoryGroups; track group.category) {
+    <div class="assets-page__category">
+      <h2 class="assets-page__category-title">{{ group.label }}</h2>
+      <div class="assets-page__grid">
+        @for (item of group.items; track item.id) {
+          <ans-equipment-card [equipment]="item" />
+        }
+      </div>
+    </div>
+  }
+</section>

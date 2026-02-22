@@ -1,0 +1,62 @@
+<section class="chairmans-desk">
+  <div class="chairmans-desk__inner">
+    <div class="chairmans-desk__portrait">
+      <div class="chairmans-desk__avatar">
+        @if (!photoError()) {
+          <img
+            class="chairmans-desk__photo"
+            src="/images/team/mehinder-sharma.jpg"
+            alt="Sh. Mehinder Sharma, Managing Director"
+            (error)="photoError.set(true)"
+          />
+        } @else {
+          <span class="chairmans-desk__initials" aria-hidden="true">MS</span>
+        }
+      </div>
+      <h3 class="chairmans-desk__name">Sh. Mehinder Sharma</h3>
+      <p class="chairmans-desk__role">Managing Director</p>
+      <p class="chairmans-desk__role">ANS Constructions Pvt. Ltd.</p>
+
+      <ul class="chairmans-desk__credentials">
+        <li>Science Graduate &amp; MBA</li>
+        <li>40+ years of industry experience</li>
+        <li>Former Director, Toyo Engineering India Ltd.</li>
+        <li>Second-generation entrepreneur</li>
+      </ul>
+    </div>
+
+    <div class="chairmans-desk__message">
+      <ans-section-header title="From the Managing Director's Desk" />
+
+      <div class="chairmans-desk__quote-mark" aria-hidden="true">&ldquo;</div>
+
+      <div class="chairmans-desk__body">
+        <p>
+          ANS Constructions Pvt Ltd was built on the foundation of trust, hard work, and an unwavering
+          commitment to quality. My father, Late Sh. Amar Nath Sharma Ji, started this journey
+          with nothing but determination and a belief that honest work always triumphs.
+        </p>
+        <p>
+          Over the past six decades, we have grown from a regional irrigation contractor to a
+          nationally recognised construction conglomerate — trusted by India's largest public
+          sector enterprises, multinational EPC contractors, and government agencies alike.
+        </p>
+        <p>
+          Our philosophy has always been simple: treat every project as our own. Whether it is
+          a national highway in Himachal Pradesh, a fertilizer plant in Rajasthan, or an
+          international cricket stadium in Dharamshala — we bring the same rigour, dedication,
+          and quality to every engagement.
+        </p>
+        <p>
+          As we move forward, our focus is on innovation, sustainable construction practices,
+          and developing our people. We are proud to be ISO 9001 and OHSAS 18001 certified,
+          and we remain committed to continuous improvement in every domain we operate in.
+        </p>
+        <p>
+          To our clients, partners, and teams across India —
+          <strong>We Remain At Your Service.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

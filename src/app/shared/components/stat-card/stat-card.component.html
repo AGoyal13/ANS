@@ -1,0 +1,12 @@
+<div class="stat-card">
+  <div class="stat-card__value">
+    @if (prefix()) {
+      <span class="stat-card__prefix">{{ prefix() }}</span>
+    }
+    {{ value() }}
+    @if (suffix()) {
+      <span class="stat-card__suffix">{{ suffix() }}</span>
+    }
+  </div>
+  <div class="stat-card__label">{{ label() }}</div>
+</div>

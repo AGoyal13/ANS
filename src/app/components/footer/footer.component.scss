@@ -1,0 +1,166 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.footer {
+  background: $color-secondary;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: auto;
+
+  &__main {
+    @include container;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: $spacing-xl;
+    padding: $spacing-2xl $page-margin;
+
+    @include respond-to('lg') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to('sm') {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  // --- Brand ---
+  &__logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.375rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__logo-img {
+    height: 44px;
+    width: auto;
+    display: block;
+  }
+
+  &__logo-mark {
+    font-family: $font-heading;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: $color-primary;
+  }
+
+  &__logo-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  &__tagline {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: $color-primary-light;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__desc {
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: $spacing-md;
+    max-width: 340px;
+  }
+
+  &__certs {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+  }
+
+  &__cert-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: $radius-sm;
+    letter-spacing: 0.04em;
+  }
+
+  // --- Quick Links ---
+  &__heading {
+    color: $color-text-on-secondary;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+    padding-bottom: $spacing-xs;
+    border-bottom: 2px solid $color-primary;
+    display: inline-block;
+  }
+
+  &__link-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__link {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  // --- Contact ---
+  &__address {
+    font-style: normal;
+    font-size: 0.875rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: $spacing-md;
+  }
+
+  &__contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    font-size: 0.875rem;
+
+    li {
+      display: flex;
+      gap: $spacing-xs;
+      align-items: baseline;
+    }
+  }
+
+  &__contact-label {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    min-width: 44px;
+  }
+
+  // --- Bottom bar ---
+  &__bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: $spacing-md $page-margin;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+
+    @include container;
+  }
+
+  &__copy {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &__sub {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.4);
+  }
+}

@@ -1,0 +1,143 @@
+// =============================================================================
+// ANS Constructions — Mixins & Utilities
+// =============================================================================
+@use 'sass:map';
+@use 'sass:color';
+@use 'variables' as *;
+
+// --- Responsive Breakpoints ---
+// Usage: @include respond-to('md') { ... }
+$breakpoints: (
+  'xs': 480px,
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+);
+
+@mixin respond-to($bp) {
+  @if map.has-key($breakpoints, $bp) {
+    @media (max-width: #{map.get($breakpoints, $bp)}) {
+      @content;
+    }
+  } @else {
+    @warn 'Breakpoint `#{$bp}` not found in $breakpoints map.';
+  }
+}
+
+// --- Layout ---
+
+// Constrained centered content container
+@mixin container {
+  width: 100%;
+  max-width: $max-content-width;
+  margin-inline: auto;
+}
+
+// Consistent section vertical padding
+@mixin section-padding {
+  padding-block: $spacing-2xl;
+
+  @include respond-to('md') {
+    padding-block: $spacing-xl;
+  }
+
+  @include respond-to('sm') {
+    padding-block: $spacing-lg;
+  }
+}
+
+// Break out of parent's horizontal padding to go full-bleed
+// Use on sections that need edge-to-edge background while keeping text padded
+@mixin full-bleed {
+  margin-inline: calc(var(--page-margin) * -1);
+  padding-inline: var(--page-margin);
+}
+
+// --- Flexbox Shortcuts ---
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+// --- Card Surface ---
+@mixin card {
+  background: $color-surface;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+  transition: box-shadow $transition-base, transform $transition-base;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+}
+
+// --- Buttons ---
+@mixin btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: 0.75rem 1.75rem;
+  background: $color-primary;
+  color: $color-text-on-primary;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: $radius-sm;
+  border: 2px solid $color-primary;
+  transition: background $transition-fast, border-color $transition-fast, color $transition-fast;
+
+  &:hover {
+    background: $color-primary-dark;
+    border-color: $color-primary-dark;
+  }
+}
+
+@mixin btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: $color-primary;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: $radius-sm;
+  border: 2px solid $color-primary;
+  transition: background $transition-fast, color $transition-fast;
+
+  &:hover {
+    background: $color-primary;
+    color: $color-text-on-primary;
+  }
+}
+
+// --- Grid helpers ---
+@mixin grid($cols: 3, $gap: $spacing-lg) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}
+
+// --- Section header accent line ---
+@mixin accent-line {
+  content: '';
+  display: block;
+  width: 56px;
+  height: 4px;
+  background: $color-primary;
+  border-radius: $radius-full;
+  margin-top: $spacing-xs;
+}

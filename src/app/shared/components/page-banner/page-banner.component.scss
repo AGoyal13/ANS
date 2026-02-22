@@ -1,0 +1,33 @@
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/mixins' as *;
+
+.page-banner {
+  @include full-bleed;
+  background: $color-secondary;
+  padding-block: $spacing-xl;
+
+  &__inner {
+    @include container;
+  }
+
+  &__breadcrumb {
+    display: block;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: $spacing-sm;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: $color-text-on-secondary;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.1rem;
+    max-width: 560px;
+    margin-top: $spacing-sm;
+  }
+}

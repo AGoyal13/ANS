@@ -1,0 +1,12 @@
+<div class="equipment-card">
+  <div class="equipment-card__qty">{{ equipment().quantity }}</div>
+  <div class="equipment-card__body">
+    <h3 class="equipment-card__name">{{ equipment().name }}</h3>
+    @if (equipment().make) {
+      <p class="equipment-card__make">{{ equipment().make }}</p>
+    }
+    @if (equipment().capacity) {
+      <p class="equipment-card__capacity">{{ equipment().capacity }}</p>
+    }
+  </div>
+</div>

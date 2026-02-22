@@ -1,0 +1,22 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.stats-bar {
+  @include full-bleed;
+  background: $color-surface;
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    @include container;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    @include respond-to('xl') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-to('sm') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

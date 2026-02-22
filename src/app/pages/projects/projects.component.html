@@ -1,0 +1,35 @@
+<ans-page-banner
+  title="Our Projects"
+  subtitle="A portfolio spanning highways, refineries, irrigation systems, stadiums and institutional buildings across India."
+  breadcrumb="Projects"
+/>
+
+<section class="projects-page">
+  <div class="projects-page__summary">
+    <span class="projects-page__count">
+      <strong>{{ completedCount() }}</strong> Completed
+    </span>
+    <span class="projects-page__divider" aria-hidden="true">·</span>
+    <span class="projects-page__count projects-page__count--active">
+      <strong>{{ inProgressCount() }}</strong> In Progress
+    </span>
+    <span class="projects-page__divider" aria-hidden="true">·</span>
+    <span class="projects-page__count">
+      <strong>{{ filteredProjects().length }}</strong> Showing
+    </span>
+  </div>
+
+  <ans-project-filter
+    [activeFilter]="activeFilter()"
+    (filterChange)="onFilterChange($event)"
+  />
+
+  <div class="projects-page__grid">
+    @for (project of filteredProjects(); track project.id) {
+      <ans-project-card [project]="project" />
+    }
+    @empty {
+      <p class="projects-page__empty">No projects in this category.</p>
+    }
+  </div>
+</section>

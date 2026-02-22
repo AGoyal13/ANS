@@ -1,0 +1,40 @@
+<article class="project-card" [class.project-card--active]="project().status === 'in-progress'">
+  @if (!photoError()) {
+    <div class="project-card__img-wrap">
+      <img
+        class="project-card__img"
+        [src]="photoSrc()"
+        [alt]="project().name"
+        (error)="photoError.set(true)"
+        loading="lazy"
+      />
+    </div>
+  }
+  <div class="project-card__header">
+    <span
+      class="project-card__status"
+      [class.project-card__status--active]="project().status === 'in-progress'"
+    >
+      {{ project().status === 'in-progress' ? 'In Progress' : 'Completed' }}
+    </span>
+    @if (project().valueCrore) {
+      <span class="project-card__value">&#8377;{{ project().valueCrore }} Cr</span>
+    }
+  </div>
+
+  <h3 class="project-card__name">{{ project().name }}</h3>
+
+  <div class="project-card__meta">
+    <span class="project-card__client">{{ project().client }}</span>
+    @if (project().location) {
+      <span class="project-card__location">{{ project().location }}</span>
+    }
+    @if (project().completionDate) {
+      <span class="project-card__date">{{ project().completionDate }}</span>
+    }
+  </div>
+
+  @if (project().description) {
+    <p class="project-card__desc">{{ project().description }}</p>
+  }
+</article>

@@ -1,0 +1,123 @@
+@use '../../../../../styles/variables' as *;
+@use '../../../../../styles/mixins' as *;
+
+.chairmans-desk {
+  @include full-bleed;
+  @include section-padding;
+  background: $color-surface;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+
+  &__inner {
+    @include container;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: $spacing-2xl;
+    align-items: start;
+
+    @include respond-to('lg') {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  // --- Portrait column ---
+  &__portrait {
+    position: sticky;
+    top: calc($header-height + $spacing-lg);
+    text-align: center;
+
+    @include respond-to('lg') {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: $color-secondary;
+    border: 4px solid $color-primary;
+    @include flex-center;
+    margin: 0 auto $spacing-md;
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__initials {
+    font-family: $font-heading;
+    font-size: 2rem;
+    font-weight: 800;
+    color: $color-primary;
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $color-text;
+    margin-bottom: 0.25rem;
+  }
+
+  &__role {
+    font-size: 0.875rem;
+    color: $color-text-muted;
+    line-height: 1.4;
+  }
+
+  &__credentials {
+    margin-top: $spacing-lg;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+    background: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    padding: $spacing-md;
+    font-size: 0.8rem;
+    color: $color-text-muted;
+
+    li {
+      padding-left: $spacing-sm;
+      position: relative;
+
+      &::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: $color-accent;
+        font-weight: 700;
+      }
+    }
+  }
+
+  // --- Message column ---
+  &__message {
+    position: relative;
+  }
+
+  &__quote-mark {
+    font-size: 8rem;
+    line-height: 0.5;
+    color: rgba($color-primary, 0.12);
+    font-family: Georgia, serif;
+    pointer-events: none;
+    margin-bottom: -2rem;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}

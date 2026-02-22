@@ -1,0 +1,27 @@
+<section class="services-preview">
+  <ans-section-header
+    title="What We Build"
+    subtitle="From national highways to international cricket stadiums, our expertise spans the full spectrum of civil construction."
+  />
+
+  <div class="services-preview__grid">
+    @for (service of services; track service.id) {
+      <div class="services-preview__card">
+        <div class="services-preview__card-top">
+          <span class="services-preview__card-number">0{{ $index + 1 }}</span>
+          <h3 class="services-preview__card-title">{{ service.title }}</h3>
+        </div>
+        <p class="services-preview__card-desc">{{ service.description }}</p>
+        <ul class="services-preview__card-highlights">
+          @for (highlight of service.highlights.slice(0, 2); track highlight) {
+            <li class="services-preview__highlight">{{ highlight }}</li>
+          }
+        </ul>
+      </div>
+    }
+  </div>
+
+  <div class="services-preview__footer">
+    <a class="services-preview__cta" routerLink="/services">View All Services</a>
+  </div>
+</section>
