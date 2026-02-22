@@ -15,9 +15,9 @@
         @for (client of longTermClients; track client.id) {
           <div class="clients-page__longterm-card">
             <div class="clients-page__longterm-logo">
-              @if (!hasLogoError(client.id)) {
+              @if (client.logoSrc && !hasLogoError(client.id)) {
                 <img
-                  [src]="logoSrc(client.id)"
+                  [src]="client.logoSrc"
                   [alt]="client.shortName ?? client.name"
                   class="clients-page__logo-img"
                   (error)="onLogoError(client.id)"
@@ -48,9 +48,9 @@
           @for (client of group.clients; track client.id) {
             <div class="clients-page__client-chip">
               <span class="clients-page__client-abbr">
-                @if (!hasLogoError(client.id)) {
+                @if (client.logoSrc && !hasLogoError(client.id)) {
                   <img
-                    [src]="logoSrc(client.id)"
+                    [src]="client.logoSrc"
                     [alt]="client.shortName ?? client.name"
                     class="clients-page__logo-img--small"
                     (error)="onLogoError(client.id)"

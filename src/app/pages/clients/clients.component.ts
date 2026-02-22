@@ -30,10 +30,6 @@ export class ClientsComponent {
     return this.logoErrors.get(clientId) ?? false;
   }
 
-  logoSrc(clientId: string): string {
-    return `/images/clients/${clientId}.svg`;
-  }
-
   protected readonly sectorLabels: Record<ClientSector, string> = {
     'oil-gas': 'Oil, Gas & Energy',
     fertilizer: 'Fertilizers & Chemicals',
