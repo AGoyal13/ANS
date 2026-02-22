@@ -11,6 +11,7 @@ export const PROJECTS: Project[] = [
     completionDate: '11 Dec 2018',
     location: 'HMEL Refinery, Bathinda, Punjab',
     status: 'completed',
+    imageSrc: '/images/projects/hmel-low-cost-expansion.jpg',
   },
   {
     id: 'hmel-etp-ro-dm',
@@ -21,6 +22,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 Mar 2011',
     location: 'HMEL, Bathinda, Punjab',
     status: 'completed',
+    imageSrc: '/images/projects/hmel-etp-ro-dm.jpg',
   },
   {
     id: 'hmel-coke-handling',
@@ -31,6 +33,7 @@ export const PROJECTS: Project[] = [
     completionDate: '30 Sep 2011',
     location: 'HMEL, Bathinda, Punjab',
     status: 'completed',
+    imageSrc: '/images/projects/hmel-coke-handling.jpg',
   },
   {
     id: 'petronet-lng-dahej',
@@ -41,6 +44,7 @@ export const PROJECTS: Project[] = [
     completionDate: '01 Dec 2003',
     location: 'Dahej-Bharuch, Gujarat',
     status: 'completed',
+    imageSrc: '/images/projects/petronet-lng-dahej.jpg',
   },
   {
     id: 'cfcl-revamp',
@@ -51,6 +55,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 May 2009',
     location: 'CFCL, Gadepan, Kota, Rajasthan',
     status: 'completed',
+    imageSrc: '/images/projects/cfcl-revamp.jpg',
   },
   {
     id: 'ongc-c2c3c4-dahej',
@@ -61,6 +66,7 @@ export const PROJECTS: Project[] = [
     completionDate: '05 Nov 2010',
     location: 'Dahej-Bharuch, Gujarat',
     status: 'completed',
+    imageSrc: '/images/projects/ongc-c2c3c4-dahej.jpg',
   },
   {
     id: 'tata-chemicals-babrala',
@@ -71,6 +77,7 @@ export const PROJECTS: Project[] = [
     completionDate: '16 Feb 2009',
     location: 'Babrala, Uttar Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/tata-chemicals-babrala.jpg',
   },
   {
     id: 'dmrc-metro-mall',
@@ -79,6 +86,7 @@ export const PROJECTS: Project[] = [
     category: 'civil-structural',
     location: 'New Delhi',
     status: 'in-progress',
+    imageSrc: '/images/projects/dmrc-metro-mall.jpg',
   },
   {
     id: 'iocl-barauni-refinery',
@@ -88,6 +96,7 @@ export const PROJECTS: Project[] = [
     valueCrore: 68.09,
     location: 'Barauni, Bihar',
     status: 'in-progress',
+    imageSrc: '/images/projects/iocl-barauni-refinery.jpg',
   },
 
   // --- Roads & Highways ---
@@ -100,6 +109,7 @@ export const PROJECTS: Project[] = [
     completionDate: '15 Dec 2015',
     location: 'Jahu-Kalkhar, Himachal Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/hp-una-barsar-road.jpg',
   },
   {
     id: 'hmel-ggsr-roads',
@@ -110,6 +120,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 Oct 2009',
     location: 'HMEL, Bathinda, Punjab',
     status: 'completed',
+    imageSrc: '/images/projects/hmel-ggsr-roads.jpg',
   },
   {
     id: 'kaman-bot-road',
@@ -120,6 +131,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 Dec 2008',
     location: 'Bharatpur, Rajasthan',
     status: 'completed',
+    imageSrc: '/images/projects/kaman-bot-road.jpg',
   },
   {
     id: 'hp-bharwain-road',
@@ -128,6 +140,7 @@ export const PROJECTS: Project[] = [
     category: 'roads-highways',
     location: 'District Una, Himachal Pradesh',
     status: 'in-progress',
+    imageSrc: '/images/projects/hp-bharwain-road.jpg',
   },
   {
     id: 'dharamshala-smart-city',
@@ -137,6 +150,7 @@ export const PROJECTS: Project[] = [
     valueCrore: 39.04,
     location: 'Dharamshala, Himachal Pradesh',
     status: 'in-progress',
+    imageSrc: '/images/projects/dharamshala-smart-city.jpg',
   },
 
   // --- Irrigation & Water Resources ---
@@ -150,6 +164,7 @@ export const PROJECTS: Project[] = [
     location: 'Chanderi, Madhya Pradesh',
     status: 'completed',
     description: 'Largest single irrigation contract executed by ANS.',
+    imageSrc: '/images/projects/chanderi-micro-irrigation.jpg',
   },
   {
     id: 'dhasan-left-bank-canal',
@@ -160,6 +175,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 May 2019',
     location: 'Tikamgarh, Madhya Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/dhasan-left-bank-canal.jpg',
   },
   {
     id: 'bariyarpur-distributaries',
@@ -170,6 +186,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 Dec 2013',
     location: 'Chhattarpur, Madhya Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/bariyarpur-distributaries.jpg',
   },
   {
     id: 'harsi-canal-restructuring',
@@ -180,6 +197,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 May 2010',
     location: 'Dabra, Madhya Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/harsi-canal-restructuring.jpg',
   },
   {
     id: 'karam-dam',
@@ -189,6 +207,7 @@ export const PROJECTS: Project[] = [
     valueCrore: 99.86,
     location: 'Dhar, Madhya Pradesh',
     status: 'in-progress',
+    imageSrc: '/images/projects/karam-dam.jpg',
   },
   {
     id: 'nhpc-indo-nepal-canal',
@@ -198,6 +217,7 @@ export const PROJECTS: Project[] = [
     valueCrore: 57.28,
     location: 'Tanakpur, Uttarakhand',
     status: 'in-progress',
+    imageSrc: '/images/projects/nhpc-indo-nepal-canal.jpg',
   },
 
   // --- Buildings ---
@@ -210,6 +230,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 Mar 2016',
     location: 'Mysore, Karnataka',
     status: 'completed',
+    imageSrc: '/images/projects/zuari-luxury-villas.jpg',
   },
   {
     id: 'iocl-lpg-trishundi',
@@ -220,6 +241,7 @@ export const PROJECTS: Project[] = [
     completionDate: '31 Dec 2020',
     location: 'Trishundi, Uttar Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/iocl-lpg-trishundi.jpg',
   },
   {
     id: 'mandya-medical-college-2',
@@ -230,6 +252,7 @@ export const PROJECTS: Project[] = [
     completionDate: '30 Jun 2009',
     location: 'Mandiya, Karnataka',
     status: 'completed',
+    imageSrc: '/images/projects/mandya-medical-college-2.jpg',
   },
   {
     id: 'cpwd-computer-centre-iiit',
@@ -240,6 +263,7 @@ export const PROJECTS: Project[] = [
     completionDate: '18 Jun 2012',
     location: 'Allahabad, Uttar Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/cpwd-computer-centre-iiit.jpg',
   },
   {
     id: 'cpwd-boys-hostel-iiit',
@@ -250,6 +274,7 @@ export const PROJECTS: Project[] = [
     completionDate: '23 Nov 2015',
     location: 'Allahabad, Uttar Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/cpwd-boys-hostel-iiit.jpg',
   },
   {
     id: 'bits-pilani-goa',
@@ -260,6 +285,7 @@ export const PROJECTS: Project[] = [
     completionDate: '15 Jul 2005',
     location: 'Zuarinagar, Goa',
     status: 'completed',
+    imageSrc: '/images/projects/bits-pilani-goa.jpg',
   },
   {
     id: 'mandya-medical-college-1',
@@ -270,6 +296,7 @@ export const PROJECTS: Project[] = [
     completionDate: '08 Nov 2006',
     location: 'Mandiya, Karnataka',
     status: 'completed',
+    imageSrc: '/images/projects/mandya-medical-college-1.jpg',
   },
   {
     id: 'cfcl-residential-school',
@@ -280,6 +307,7 @@ export const PROJECTS: Project[] = [
     completionDate: '30 Jun 2013',
     location: 'Gadepan, Kota, Rajasthan',
     status: 'completed',
+    imageSrc: '/images/projects/cfcl-residential-school.jpg',
   },
   {
     id: 'barc-aswtf-building',
@@ -288,6 +316,7 @@ export const PROJECTS: Project[] = [
     category: 'buildings',
     location: 'Trombay, Maharashtra',
     status: 'in-progress',
+    imageSrc: '/images/projects/barc-aswtf-building.jpg',
   },
   {
     id: 'talcher-land-development',
@@ -297,6 +326,7 @@ export const PROJECTS: Project[] = [
     valueCrore: 34.0,
     location: 'Talcher, Odisha',
     status: 'in-progress',
+    imageSrc: '/images/projects/talcher-land-development.jpg',
   },
 
   // --- Stadium & Landscaping ---
@@ -311,6 +341,7 @@ export const PROJECTS: Project[] = [
     status: 'completed',
     description:
       'Iconic international-standard cricket stadium with distinctive Himachali architecture.',
+    imageSrc: '/images/projects/hpca-dharamshala-stadium.jpg',
   },
   {
     id: 'cfcl-landscaping',
@@ -321,6 +352,7 @@ export const PROJECTS: Project[] = [
     completionDate: '21 May 2013',
     location: 'Gadepan, Kota, Rajasthan',
     status: 'completed',
+    imageSrc: '/images/projects/cfcl-landscaping.jpg',
   },
   {
     id: 'tata-chemicals-greenbelt',
@@ -330,6 +362,7 @@ export const PROJECTS: Project[] = [
     location: 'Babrala, Uttar Pradesh',
     status: 'completed',
     description: 'Ongoing contract spanning over 21 years.',
+    imageSrc: '/images/projects/tata-chemicals-greenbelt.jpg',
   },
 
   // --- Site Grading ---
@@ -342,6 +375,7 @@ export const PROJECTS: Project[] = [
     completionDate: '30 Jun 2011',
     location: 'Mangalore, Karnataka',
     status: 'completed',
+    imageSrc: '/images/projects/ongc-mrpl-site-grading.jpg',
   },
   {
     id: 'ongc-c2c3c4-site-grading',
@@ -352,6 +386,7 @@ export const PROJECTS: Project[] = [
     completionDate: '15 Mar 2007',
     location: 'Dahej, Gujarat',
     status: 'completed',
+    imageSrc: '/images/projects/ongc-c2c3c4-site-grading.jpg',
   },
   {
     id: 'nuppl-ghatampur-power',
@@ -362,6 +397,7 @@ export const PROJECTS: Project[] = [
     completionDate: '28 Aug 2017',
     location: 'Ghatampur, Kanpur Nagar, Uttar Pradesh',
     status: 'completed',
+    imageSrc: '/images/projects/nuppl-ghatampur-power.jpg',
   },
 
   // --- Farm House & Interior ---
@@ -374,6 +410,7 @@ export const PROJECTS: Project[] = [
     completionDate: '25 May 2003',
     location: 'Bijwasan, New Delhi',
     status: 'completed',
+    imageSrc: '/images/projects/sharma-farms-bijwasan.jpg',
   },
   {
     id: 'faridabad-farms-resorts',
@@ -384,5 +421,6 @@ export const PROJECTS: Project[] = [
     completionDate: '10 Oct 2016',
     location: 'Faridabad, Haryana',
     status: 'completed',
+    imageSrc: '/images/projects/faridabad-farms-resorts.jpg',
   },
 ];

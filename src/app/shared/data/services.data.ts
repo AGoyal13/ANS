@@ -7,6 +7,7 @@ export const SERVICES: Service[] = [
     description:
       'Construction of national highways, state roads, BOT road projects, widening and strengthening of existing road corridors across India.',
     icon: 'road',
+    imageSrc: '/images/services/highways-roads.jpg',
     highlights: [
       'National and state highway construction',
       'BOT (Build-Operate-Transfer) road projects',
@@ -20,6 +21,7 @@ export const SERVICES: Service[] = [
     description:
       'Civil and structural works for oil refineries, petrochemical complexes, LNG terminals, and process plants at major industrial sites across India.',
     icon: 'industry',
+    imageSrc: '/images/services/refinery-petrochemicals.jpg',
     highlights: [
       'Civil & structural works for oil refineries',
       'LNG terminal construction',
@@ -33,6 +35,7 @@ export const SERVICES: Service[] = [
     description:
       'Comprehensive construction services for fertilizer manufacturing plants including civil, structural, and allied works for major fertilizer producers.',
     icon: 'factory',
+    imageSrc: '/images/services/fertilizer-plants.jpg',
     highlights: [
       'Fertilizer plant civil & structural works',
       'Debottlenecking & revamp projects',
@@ -46,6 +49,7 @@ export const SERVICES: Service[] = [
     description:
       'Construction of dams, canals, distributaries, and micro-irrigation systems for state irrigation departments and water resource authorities.',
     icon: 'water',
+    imageSrc: '/images/services/irrigation.jpg',
     highlights: [
       'Dam and barrage construction',
       'Canal and distributary systems',
@@ -59,6 +63,7 @@ export const SERVICES: Service[] = [
     description:
       'Construction of LPG bottling plants, power plant buildings, workshop buildings, warehouses and allied industrial infrastructure.',
     icon: 'building-factory',
+    imageSrc: '/images/services/industrial-buildings.jpg',
     highlights: [
       'LPG bottling plant construction',
       'Power plant civil works',
@@ -72,6 +77,7 @@ export const SERVICES: Service[] = [
     description:
       'Construction of luxury villas, townships, staff quarters, hostels, medical colleges, computer centres, and institutional campuses.',
     icon: 'building',
+    imageSrc: '/images/services/housing-institutional.jpg',
     highlights: [
       'Luxury villa & township construction',
       'Staff quarters and residential buildings',
@@ -85,6 +91,7 @@ export const SERVICES: Service[] = [
     description:
       'Construction of international cricket stadiums and sports infrastructure, including the iconic HPCA International Cricket Stadium at Dharamshala.',
     icon: 'stadium',
+    imageSrc: '/images/services/stadium-sports.jpg',
     highlights: [
       'International cricket stadium construction',
       'Sports infrastructure',
@@ -98,6 +105,7 @@ export const SERVICES: Service[] = [
     description:
       'Long-term maintenance and development of greenbelts, lawns, gardens and landscaping at industrial and institutional sites.',
     icon: 'leaf',
+    imageSrc: '/images/services/landscaping-horticulture.jpg',
     highlights: [
       'Greenbelt maintenance contracts',
       'Lawn mowing and garden upkeep',
@@ -111,6 +119,7 @@ export const SERVICES: Service[] = [
     description:
       'Large-scale site grading, land development and earthmoving works for industrial plants, power projects, and compound wall construction.',
     icon: 'excavator',
+    imageSrc: '/images/services/site-grading.jpg',
     highlights: [
       'Industrial plant site grading',
       'Thermal power project earthworks',
