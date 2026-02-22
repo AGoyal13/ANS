@@ -1,9 +1,9 @@
 <article class="project-card" [class.project-card--active]="project().status === 'in-progress'">
-  @if (!photoError()) {
+  @if (project().imageSrc && !photoError()) {
     <div class="project-card__img-wrap">
       <img
         class="project-card__img"
-        [src]="photoSrc()"
+        [src]="project().imageSrc"
         [alt]="project().name"
         (error)="photoError.set(true)"
         loading="lazy"
