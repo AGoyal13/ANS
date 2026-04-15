@@ -22,7 +22,7 @@ export class GroupStructureComponent {
       highlights: [
         '₹147 Cr+ annual turnover (FY24)',
         'ISO 9001 & OHSAS 18001 certified',
-        '25+ concurrent projects',
+        '24+ concurrent projects',
         'Pan-India operations',
       ],
     },

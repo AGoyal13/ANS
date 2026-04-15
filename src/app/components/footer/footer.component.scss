@@ -114,8 +114,12 @@
     font-style: normal;
     font-size: 0.875rem;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: $spacing-md;
+
+    p {
+      color: inherit;
+    }
   }
 
   &__contact-list {

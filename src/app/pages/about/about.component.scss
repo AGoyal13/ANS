@@ -1,1 +1,28 @@
 // About page is a composition of section components.
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.about-chart {
+  @include section-padding;
+  padding-top: $spacing-2xl;
+
+  &__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $color-secondary;
+    margin-bottom: $spacing-md;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: $radius-md;
+    border: 1px solid $color-border;
+  }
+}

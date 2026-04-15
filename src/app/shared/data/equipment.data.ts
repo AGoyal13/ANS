@@ -16,6 +16,7 @@ export const EQUIPMENT: Equipment[] = [
     category: 'earth-moving',
     quantity: 10,
     make: 'HM / JCB',
+    capacity: '2 m³ / 0.24 m³',
   },
   {
     id: 'motor-graders',
@@ -67,9 +68,17 @@ export const EQUIPMENT: Equipment[] = [
   },
   {
     id: 'vibratory-rollers',
-    name: 'Vibratory / Tandem Rollers',
+    name: 'Vibratory Rollers',
     category: 'road-construction',
     quantity: 8,
+    make: 'Ingersoll Rand',
+    capacity: '11 Ton',
+  },
+  {
+    id: 'tandem-rollers',
+    name: 'Tandem Rollers',
+    category: 'road-construction',
+    quantity: 6,
     make: 'Ingersoll Rand',
     capacity: '11 Ton',
   },
@@ -113,6 +122,14 @@ export const EQUIPMENT: Equipment[] = [
     quantity: 15,
     make: 'Tata / Leyland',
     capacity: '6 m³',
+  },
+  {
+    id: 'self-loading-mixers',
+    name: 'Self-Loading Concrete Mixers (ARGO 3000)',
+    category: 'batching-mixing',
+    quantity: 3,
+    make: 'Ajax Fiori',
+    capacity: '3 m³',
   },
   {
     id: 'concrete-pumps',
@@ -242,6 +259,15 @@ export const EQUIPMENT: Equipment[] = [
     category: 'fabrication',
     quantity: 15,
     make: 'Spartan',
+  },
+
+  // --- Vehicles ---
+  {
+    id: 'vehicles',
+    name: 'Vehicles',
+    category: 'vehicles',
+    quantity: 50,
+    make: 'Tata / Hyundai / Maruti',
   },
 
   // --- Shuttering & Scaffolding ---

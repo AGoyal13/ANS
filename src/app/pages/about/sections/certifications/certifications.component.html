@@ -5,6 +5,7 @@
     align="center"
   />
 
+  <!-- Existing info cards -->
   <div class="certifications__grid">
     <div class="certifications__card">
       <div class="certifications__badge">ISO 9001</div>
@@ -33,5 +34,114 @@
         standing.
       </p>
     </div>
+
+    <button class="certifications__card certifications__card--pdf" (click)="pdfModalOpen.set(true)" aria-label="View Health Safety & Environment Plan">
+      <div class="certifications__badge">HSE Plan</div>
+      <h3 class="certifications__card-title">Health Safety &amp; Environment Plan</h3>
+      <p class="certifications__card-desc">
+        Our comprehensive HSE Plan outlines protocols, standards, and practices governing health,
+        safety, and environmental responsibilities across all project sites and operations.
+      </p>
+      <span class="certifications__card-cta">View Document</span>
+    </button>
   </div>
+
+  <!-- Safety & Recognition certificate image tiles -->
+  <div class="certifications__gallery-header">
+    <h3 class="certifications__gallery-title">Safety &amp; Recognition Certificates</h3>
+    <p class="certifications__gallery-sub">Click any certificate to view in full.</p>
+  </div>
+
+  <div class="certifications__gallery">
+    @for (cert of certificates; track cert.imageSrc) {
+      <button class="certifications__tile" (click)="openCert(cert)" [attr.aria-label]="'View ' + cert.title">
+        <div class="certifications__tile-thumb">
+          <img
+            class="certifications__tile-img"
+            [src]="cert.imageSrc"
+            [alt]="cert.title"
+            loading="lazy"
+          />
+          <div class="certifications__tile-overlay">
+            <span class="certifications__tile-view">View Certificate</span>
+          </div>
+        </div>
+        <div class="certifications__tile-info">
+          <span class="certifications__tile-year">{{ cert.year }}</span>
+          <h4 class="certifications__tile-title">{{ cert.title }}</h4>
+          <p class="certifications__tile-issuer">{{ cert.issuer }}</p>
+        </div>
+      </button>
+    }
+  </div>
+
+  <!-- PDF Modal -->
+  @if (pdfModalOpen()) {
+    <div
+      class="certifications__backdrop certifications__backdrop--pdf"
+      (click)="pdfModalOpen.set(false)"
+      aria-hidden="true"
+    >
+      <div
+        class="certifications__pdf-modal"
+        role="dialog"
+        aria-label="Health Safety & Environment Plan"
+        (click)="$event.stopPropagation()"
+      >
+        <div class="certifications__modal-header">
+          <div class="certifications__modal-meta">
+            <span class="certifications__modal-year">HSE Plan</span>
+            <h3 class="certifications__modal-title">Health Safety &amp; Environment Plan</h3>
+            <p class="certifications__modal-issuer">ANS Constructions Pvt. Ltd.</p>
+          </div>
+          <button
+            class="certifications__modal-close"
+            (click)="pdfModalOpen.set(false)"
+            aria-label="Close document"
+          >&#x2715;</button>
+        </div>
+        <iframe
+          class="certifications__pdf-frame"
+          src="documents/HSE_Booklet.pdf"
+          title="Health Safety & Environment Plan"
+        ></iframe>
+      </div>
+    </div>
+  }
+
+  <!-- Certificate image modal -->
+  @if (activeCert()) {
+    <div
+      class="certifications__backdrop"
+      (click)="closeCert()"
+      aria-hidden="true"
+    >
+      <div
+        class="certifications__modal"
+        role="dialog"
+        [attr.aria-label]="activeCert()!.title"
+        (click)="$event.stopPropagation()"
+      >
+        <div class="certifications__modal-header">
+          <div class="certifications__modal-meta">
+            <span class="certifications__modal-year">{{ activeCert()!.year }}</span>
+            <h3 class="certifications__modal-title">{{ activeCert()!.title }}</h3>
+            <p class="certifications__modal-issuer">{{ activeCert()!.issuer }}</p>
+          </div>
+          <button
+            class="certifications__modal-close"
+            (click)="closeCert()"
+            aria-label="Close certificate"
+          >&#x2715;</button>
+        </div>
+        <div class="certifications__modal-body">
+          <img
+            class="certifications__modal-img"
+            [src]="activeCert()!.imageSrc"
+            [alt]="activeCert()!.title"
+          />
+        </div>
+      </div>
+    </div>
+  }
 </section>

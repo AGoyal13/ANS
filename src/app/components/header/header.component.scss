@@ -91,6 +91,14 @@
     @include respond-to('lg') {
       width: 100%;
     }
+
+    &--desktop-hidden {
+      display: none;
+
+      @include respond-to('lg') {
+        display: block;
+      }
+    }
   }
 
   &__nav-link {

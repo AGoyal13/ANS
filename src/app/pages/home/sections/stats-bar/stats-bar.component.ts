@@ -17,10 +17,10 @@ interface Stat {
 export class StatsBarComponent {
   protected readonly stats: Stat[] = [
     { value: '1966', label: 'Year Founded' },
-    { value: '58', label: 'Years of Excellence', suffix: '+' },
-    { value: '147', label: 'Crore Annual Turnover', prefix: '₹', suffix: ' Cr' },
+    { value: '60', label: 'Years of Excellence', suffix: '+' },
+    { value: '1,250', label: 'Active Order Book', prefix: '₹', suffix: '+' },
     { value: '30', label: 'Major Clients', suffix: '+' },
-    { value: '25', label: 'Concurrent Projects', suffix: '+' },
+    { value: '24', label: 'Current Projects', suffix: '+' },
     { value: '9', label: 'Service Domains' },
   ];
 }

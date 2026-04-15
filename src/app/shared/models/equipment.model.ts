@@ -6,7 +6,8 @@ export type EquipmentCategory =
   | 'batching-mixing'
   | 'power-utilities'
   | 'fabrication'
-  | 'shuttering-scaffolding';
+  | 'shuttering-scaffolding'
+  | 'vehicles';
 
 export interface Equipment {
   id: string;

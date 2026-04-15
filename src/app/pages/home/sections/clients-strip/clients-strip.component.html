@@ -8,10 +8,14 @@
   <div class="clients-strip__marquee-wrap" aria-label="Client list">
     <div class="clients-strip__marquee">
       @for (client of clients; track client.id) {
-        <span class="clients-strip__client-name">{{ client.shortName ?? client.name }}</span>
+        <div class="clients-strip__client-logo">
+          <img [src]="client.logoSrc" [alt]="client.shortName ?? client.name" class="clients-strip__logo-img" />
+        </div>
       }
       @for (client of clients; track 'dup-' + client.id) {
-        <span class="clients-strip__client-name" aria-hidden="true">{{ client.shortName ?? client.name }}</span>
+        <div class="clients-strip__client-logo" aria-hidden="true">
+          <img [src]="client.logoSrc" [alt]="client.shortName ?? client.name" class="clients-strip__logo-img" />
+        </div>
       }
     </div>
   </div>
@@ -19,6 +23,9 @@
   <div class="clients-strip__featured">
     @for (client of featuredClients; track client.id) {
       <div class="clients-strip__featured-card">
+        <div class="clients-strip__featured-logo">
+          <img [src]="client.logoSrc" [alt]="client.shortName ?? client.name" class="clients-strip__featured-logo-img" />
+        </div>
         <span class="clients-strip__featured-name">{{ client.shortName ?? client.name }}</span>
         <span class="clients-strip__featured-meta">
           Since {{ client.associatedSince }} &nbsp;·&nbsp; &#8377;{{ client.totalContractsCrore }} Cr+

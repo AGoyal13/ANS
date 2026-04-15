@@ -4,10 +4,12 @@
       @if (!logoError()) {
         <img
           class="header__logo-img"
-          src="/images/logo/ans-logo.svg"
+          src="images/logo/ans-logo.png"
           alt="ANS Constructions Pvt. Ltd."
           (error)="logoError.set(true)"
         />
+        <span class="header__logo-mark">ANS</span>
+        <span class="header__logo-text">Constructions Pvt Ltd</span>
       } @else {
         <span class="header__logo-mark">ANS</span>
         <span class="header__logo-text">Constructions Pvt Ltd</span>
@@ -17,7 +19,10 @@
     <nav class="header__nav" [class.header__nav--open]="menuOpen()" aria-label="Main navigation">
       <ul class="header__nav-list">
         @for (item of navItems; track item.path) {
-          <li class="header__nav-item">
+          <li
+            class="header__nav-item"
+            [class.header__nav-item--desktop-hidden]="item.hideOnDesktop"
+          >
             <a
               class="header__nav-link"
               [routerLink]="item.path"

@@ -4,8 +4,6 @@ import { CompanyStoryComponent } from './sections/company-story/company-story.co
 import { ChairmanssDeskComponent } from './sections/chairmans-desk/chairmans-desk.component';
 import { GroupStructureComponent } from './sections/group-structure/group-structure.component';
 import { PhilosophyComponent } from './sections/philosophy/philosophy.component';
-import { CertificationsComponent } from './sections/certifications/certifications.component';
-
 @Component({
   selector: 'ans-about',
   imports: [
@@ -14,7 +12,6 @@ import { CertificationsComponent } from './sections/certifications/certification
     ChairmanssDeskComponent,
     GroupStructureComponent,
     PhilosophyComponent,
-    CertificationsComponent,
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',

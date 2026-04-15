@@ -5,31 +5,119 @@
 />
 
 <section class="projects-page">
-  <div class="projects-page__summary">
-    <span class="projects-page__count">
-      <strong>{{ completedCount() }}</strong> Completed
-    </span>
-    <span class="projects-page__divider" aria-hidden="true">·</span>
-    <span class="projects-page__count projects-page__count--active">
-      <strong>{{ inProgressCount() }}</strong> In Progress
-    </span>
-    <span class="projects-page__divider" aria-hidden="true">·</span>
-    <span class="projects-page__count">
-      <strong>{{ filteredProjects().length }}</strong> Showing
-    </span>
+
+  <!-- Toolbar: summary left, status filter right (desktop) / Filters button (mobile) -->
+  <div class="projects-page__toolbar">
+    <div class="projects-page__summary">
+      <span class="projects-page__count">
+        <strong>{{ completedCount() }}</strong> Completed
+      </span>
+      <span class="projects-page__divider" aria-hidden="true">·</span>
+      <span class="projects-page__count projects-page__count--active">
+        <strong>{{ inProgressCount() }}</strong> In Progress
+      </span>
+      <span class="projects-page__divider" aria-hidden="true">·</span>
+      <span class="projects-page__count">
+        <strong>{{ filteredProjects().length }}</strong> Showing
+      </span>
+    </div>
+
+    <!-- Desktop: status sub-filter buttons -->
+    <div class="projects-page__status-filter" role="group" aria-label="Filter by project status">
+      @for (option of statusOptions; track option.value) {
+        <button
+          class="projects-page__status-btn"
+          [class.projects-page__status-btn--active]="activeStatus() === option.value"
+          [attr.data-status]="option.value"
+          (click)="onStatusChange(option.value)"
+        >
+          {{ option.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Mobile: single Filters button -->
+    <button
+      class="projects-page__mobile-filter-btn"
+      (click)="sheetOpen.set(true)"
+      aria-haspopup="dialog"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/>
+      </svg>
+      Filters
+      @if (activeFiltersCount() > 0) {
+        <span class="projects-page__mobile-badge">{{ activeFiltersCount() }}</span>
+      }
+    </button>
   </div>
 
+  <!-- Desktop: category filter pills -->
   <ans-project-filter
+    class="projects-page__desktop-filter"
     [activeFilter]="activeFilter()"
     (filterChange)="onFilterChange($event)"
   />
 
+  <!-- Mobile bottom sheet -->
+  @if (sheetOpen()) {
+    <div
+      class="projects-page__backdrop"
+      (click)="sheetOpen.set(false)"
+      aria-hidden="true"
+    ></div>
+    <div class="projects-page__sheet" role="dialog" aria-label="Filter projects">
+      <div class="projects-page__sheet-header">
+        <span class="projects-page__sheet-title">Filters</span>
+        <button
+          class="projects-page__sheet-close"
+          (click)="sheetOpen.set(false)"
+          aria-label="Close filters"
+        >&#x2715;</button>
+      </div>
+
+      <div class="projects-page__sheet-body">
+        <div class="projects-page__sheet-group">
+          <h4 class="projects-page__sheet-label">Category</h4>
+          <div class="projects-page__sheet-options">
+            @for (option of categoryOptions; track option.value) {
+              <button
+                class="projects-page__sheet-btn"
+                [class.projects-page__sheet-btn--active]="activeFilter() === option.value"
+                (click)="onFilterChange(option.value)"
+              >{{ option.label }}</button>
+            }
+          </div>
+        </div>
+
+        <div class="projects-page__sheet-group">
+          <h4 class="projects-page__sheet-label">Status</h4>
+          <div class="projects-page__sheet-options">
+            @for (option of statusOptions; track option.value) {
+              <button
+                class="projects-page__sheet-btn"
+                [class.projects-page__sheet-btn--active]="activeStatus() === option.value"
+                (click)="onStatusChange(option.value)"
+              >{{ option.label }}</button>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="projects-page__sheet-footer">
+        <button class="projects-page__sheet-done" (click)="sheetOpen.set(false)">Done</button>
+      </div>
+    </div>
+  }
+
+  <!-- Project grid -->
   <div class="projects-page__grid">
     @for (project of filteredProjects(); track project.id) {
       <ans-project-card [project]="project" />
     }
     @empty {
-      <p class="projects-page__empty">No projects in this category.</p>
+      <p class="projects-page__empty">No projects found.</p>
     }
   </div>
+
 </section>

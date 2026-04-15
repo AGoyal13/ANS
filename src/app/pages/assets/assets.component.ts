@@ -26,6 +26,7 @@ export class AssetsComponent {
     'power-utilities': 'Power & Utilities',
     fabrication: 'Fabrication',
     'shuttering-scaffolding': 'Shuttering & Scaffolding',
+    vehicles: 'Vehicles',
   };
 
   protected readonly categoryGroups: CategoryGroup[] = (

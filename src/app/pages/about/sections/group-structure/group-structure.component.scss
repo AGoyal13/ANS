@@ -22,10 +22,9 @@
 
     &--flagship {
       border-top-color: $color-primary;
-      grid-column: span 2;
 
-      @include respond-to('md') {
-        grid-column: span 1;
+      .group-structure__card-name {
+        padding-right: 5rem;
       }
     }
   }

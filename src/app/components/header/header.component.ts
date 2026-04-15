@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 interface NavItem {
   label: string;
   path: string;
+  hideOnDesktop?: boolean;
 }
 
 @Component({
@@ -17,11 +18,12 @@ export class HeaderComponent {
   protected readonly navItems: NavItem[] = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
+    { label: 'Certificates', path: '/certifications' },
     { label: 'Services', path: '/services' },
     { label: 'Projects', path: '/projects' },
     { label: 'Clients', path: '/clients' },
     { label: 'Equipment', path: '/assets' },
-    { label: 'Contact', path: '/contact' },
+    { label: 'Contact', path: '/contact', hideOnDesktop: true },
   ];
 
   protected menuOpen = signal(false);

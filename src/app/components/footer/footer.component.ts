@@ -16,6 +16,7 @@ export class FooterComponent {
     { label: 'Services', path: '/services' },
     { label: 'Projects', path: '/projects' },
     { label: 'Clients', path: '/clients' },
+    { label: 'Certificates', path: '/certifications' },
     { label: 'Equipment', path: '/assets' },
     { label: 'Contact', path: '/contact' },
   ];
