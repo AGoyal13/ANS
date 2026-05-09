@@ -31,7 +31,7 @@ export const CLIENTS: Client[] = [
     sector: 'oil-gas',
     associatedSince: 2008,
     totalContractsCrore: 110,
-    logoSrc: 'images/clients/hmel.png',
+    logoSrc: 'images/clients/hmel-logo.png',
   },
   {
     id: 'petronet-lng',
@@ -139,6 +139,8 @@ export const CLIENTS: Client[] = [
     name: 'Bhabha Atomic Research Centre',
     shortName: 'BARC',
     sector: 'government',
+    totalContractsCrore: 150,
+    associatedSince: 2020,
     logoSrc: 'images/clients/barc.png',
   },
   {
@@ -230,6 +232,8 @@ export const CLIENTS: Client[] = [
     name: 'Hindustan Petroleum Corporation Ltd.',
     shortName: 'HPCL',
     sector: 'oil-gas',
+    totalContractsCrore: 250,
+    associatedSince: 2025,
     logoSrc: 'images/clients/hpcl.png',
   },
   {
